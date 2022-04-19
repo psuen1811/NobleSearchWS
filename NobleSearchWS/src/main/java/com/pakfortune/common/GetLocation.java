@@ -2,7 +2,6 @@ package com.pakfortune.common;
 
 import com.pakfortune.model.element.Direction;
 import com.pakfortune.model.element.SixtyJiaziTable;
-import com.pakfortune.model.star.Money;
 
 public class GetLocation {
     private static final int MAGIC_NUMBER = 9;

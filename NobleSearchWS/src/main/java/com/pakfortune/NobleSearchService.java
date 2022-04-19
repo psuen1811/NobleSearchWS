@@ -5,7 +5,6 @@ import com.pakfortune.common.CircularArrayList;
 import com.pakfortune.common.GetBranchByStem;
 import com.pakfortune.common.GetLocation;
 import com.pakfortune.common.LookupImpl;
-import com.pakfortune.model.element.Direction;
 import com.pakfortune.model.element.SixtyJiaziTable;
 import com.pakfortune.model.star.*;
 
