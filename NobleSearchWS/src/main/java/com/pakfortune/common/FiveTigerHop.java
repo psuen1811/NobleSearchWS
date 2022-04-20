@@ -1,5 +1,6 @@
 package com.pakfortune.common;
 
+
 import com.pakfortune.model.element.Stem;
 
 // 五虎遁

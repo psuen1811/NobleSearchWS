@@ -1,7 +1,5 @@
 package com.pakfortune.model.star;
 
-
-
 import com.pakfortune.common.GetInformation;
 
 import java.util.HashMap;
