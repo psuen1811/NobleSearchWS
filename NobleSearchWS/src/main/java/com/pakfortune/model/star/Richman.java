@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Richman implements GetInformationList {
 
-    private static final ArrayListMultimap<String, String> list = ArrayListMultimap.create();
     private static final String RICHMAN = "貴人";
+    private static final ArrayListMultimap<String, String> list = ArrayListMultimap.create();
 
     static {
         list.put("甲", "丁丑");
