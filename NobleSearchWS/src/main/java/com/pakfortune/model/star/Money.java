@@ -1,28 +1,26 @@
 package com.pakfortune.model.star;
 
+import com.google.common.collect.ImmutableMap;
 import com.pakfortune.common.GetInformation;
-
-import java.util.HashMap;
 
 public class Money extends GetInformation {
 
-    private static final HashMap<String, String> map = new HashMap<>();
     private static final String MONEY = "祿存";
+    private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()
+            .put("甲", "丙寅")
+            .put("乙", "己卯")
+            .put("丙", "癸巳")
+            .put("丁", "丙午")
+            .put("戊", "丁巳")
+            .put("己", "庚午")
+            .put("庚", "甲申")
+            .put("辛", "丁酉")
+            .put("壬", "辛亥")
+            .put("癸", "甲子")
+            .build();
 
-    static {
-        getMap().put("甲", "丙寅");
-        getMap().put("乙", "己卯");
-        getMap().put("丙", "癸巳");
-        getMap().put("丁", "丙午");
-        getMap().put("戊", "丁巳");
-        getMap().put("己", "庚午");
-        getMap().put("庚", "甲申");
-        getMap().put("辛", "丁酉");
-        getMap().put("壬", "辛亥");
-        getMap().put("癸", "甲子");
-    }
 
-    public static HashMap<String, String> getMap() {
+    public static ImmutableMap<String, String> getMap() {
         return map;
     }
 

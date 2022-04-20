@@ -1,4 +1,4 @@
-package com.pakfortune.nobleSearchWS;
+package com.pakfortune.noblesearchws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

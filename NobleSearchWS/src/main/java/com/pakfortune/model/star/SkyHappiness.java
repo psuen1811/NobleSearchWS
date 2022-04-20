@@ -1,33 +1,30 @@
 package com.pakfortune.model.star;
 
+import com.google.common.collect.ImmutableMap;
 import com.pakfortune.common.GetInformation;
-
-import java.util.HashMap;
 
 /*
   天喜
  */
 public class SkyHappiness extends GetInformation {
 
-    private static final HashMap<String, String> map = new HashMap<>();
     private static final String SKY_HAPPINESS = "天喜";
+    private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()
+            .put("子", "酉")
+            .put("丑", "申")
+            .put("寅", "未")
+            .put("卯", "午")
+            .put("辰", "巳")
+            .put("巳", "辰")
+            .put("午", "卯")
+            .put("未", "寅")
+            .put("申", "丑")
+            .put("酉", "子")
+            .put("戌", "亥")
+            .put("亥", "戌")
+            .build();
 
-    static {
-        getMap().put("子", "酉");
-        getMap().put("丑", "申");
-        getMap().put("寅", "未");
-        getMap().put("卯", "午");
-        getMap().put("辰", "巳");
-        getMap().put("巳", "辰");
-        getMap().put("午", "卯");
-        getMap().put("未", "寅");
-        getMap().put("申", "丑");
-        getMap().put("酉", "子");
-        getMap().put("戌", "亥");
-        getMap().put("亥", "戌");
-    }
-
-    public static HashMap<String, String> getMap() {
+    public static ImmutableMap<String, String> getMap() {
         return map;
     }
 
