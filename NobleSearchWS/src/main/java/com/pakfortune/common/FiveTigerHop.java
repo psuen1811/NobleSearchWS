@@ -4,7 +4,7 @@ package com.pakfortune.common;
 import com.pakfortune.model.element.Stem;
 
 // 五虎遁
-public class FiveTigerHop {
+public abstract class FiveTigerHop {
 
     private static final LookupInterface lookup = new LookupImpl();
 

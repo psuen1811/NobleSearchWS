@@ -6,7 +6,7 @@ import com.pakfortune.model.element.Stem;
 
 import static java.lang.Math.abs;
 
-public class GetBranchByStem {
+public abstract class GetBranchByStem {
 
     private static final LookupInterface lookup = new LookupImpl();
 
