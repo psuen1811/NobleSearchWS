@@ -3,7 +3,7 @@ package com.pakfortune.model.star;
 import com.google.common.collect.ImmutableMap;
 
 @SuppressWarnings("ALL")
-public class Study extends StarMap {
+public class Study extends StarMap implements Star {
 
     private static final String STUDY = "文昌";
     private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()
@@ -23,7 +23,7 @@ public class Study extends StarMap {
         return map;
     }
 
-    public static String getSTUDY() {
+    public String getName() {
         return STUDY;
     }
 }

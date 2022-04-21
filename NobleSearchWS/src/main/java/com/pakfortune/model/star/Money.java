@@ -2,7 +2,7 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
 
-public class Money extends StarMap {
+public class Money extends StarMap implements Star {
 
     private static final String MONEY = "祿存";
     private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()
@@ -19,11 +19,11 @@ public class Money extends StarMap {
             .build();
 
 
-    public ImmutableMap<String, String> getMap() {
+    public static ImmutableMap<String, String> getMap() {
         return map;
     }
 
-    public String getMONEY() {
+    public String getName() {
         return MONEY;
     }
 }

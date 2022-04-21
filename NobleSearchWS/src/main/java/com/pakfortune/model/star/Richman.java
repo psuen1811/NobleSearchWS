@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
-public class Richman implements StarList {
+public class Richman implements StarList, Star {
 
     private static final String RICHMAN = "貴人";
     private static final ArrayListMultimap<String, String> list = ArrayListMultimap.create();
@@ -33,7 +33,7 @@ public class Richman implements StarList {
         list.put("癸", "丁巳");
     }
 
-    public static String getRICHMAN() {
+    public String getName() {
         return RICHMAN;
     }
 

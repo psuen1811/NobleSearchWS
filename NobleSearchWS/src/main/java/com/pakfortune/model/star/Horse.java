@@ -3,7 +3,7 @@ package com.pakfortune.model.star;
 import com.pakfortune.common.GetResultByStemBranch;
 import com.pakfortune.model.element.SixtyJiaziTable;
 
-public class Horse implements GetResultByStemBranch {
+public class Horse implements GetResultByStemBranch, Star {
 
     private static final String SOUTH = "寅午戌";
     private static final String NORTH = "申子辰";
@@ -12,7 +12,7 @@ public class Horse implements GetResultByStemBranch {
 
     private static final String HORSE = "天馬";
 
-    public static String getHORSE() {
+    public String getName() {
         return HORSE;
     }
 

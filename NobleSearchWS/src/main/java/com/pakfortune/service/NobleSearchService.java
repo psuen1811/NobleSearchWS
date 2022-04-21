@@ -40,36 +40,36 @@ public class NobleSearchService extends GetLocation {
             // 找真祿干支
             Money money = new Money();
             result = money.calculate(tempStem, money.getMap());
-            stringBuilder.append(location.getLocation(result, circularArrayList, money.getMONEY())).append("\n");
+            stringBuilder.append(location.getLocation(result, circularArrayList, money.getName())).append("\n");
 
             // 找真馬干支
             Horse horse = new Horse();
             result = horse.checkStemBranch(tempStem, tempBranch).toString();
-            stringBuilder.append(location.getLocation(result, circularArrayList, horse.getHORSE())).append("\n");
+            stringBuilder.append(location.getLocation(result, circularArrayList, horse.getName())).append("\n");
 
             // 找貴人干支
             Richman richman = new Richman();
             List<String> richmanList = richman.lookupList(tempStem);
             for( String s : richmanList ) {
-                stringBuilder.append(location.getLocation(s, circularArrayList, richman.getRICHMAN())).append("\n");
+                stringBuilder.append(location.getLocation(s, circularArrayList, richman.getName())).append("\n");
             }
 
             // 真文昌
             Study study = new Study();
             result = study.calculate(tempStem, study.getMap());
-            stringBuilder.append(location.getLocation(result, circularArrayList, study.getSTUDY())).append("\n");
+            stringBuilder.append(location.getLocation(result, circularArrayList, study.getName())).append("\n");
 
             // 紅鸞
             RedFlower redFlower = new RedFlower();
             result = redFlower.calculate(tempBranch, redFlower.getMap());
             result = GetBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(location.getLocation(result, circularArrayList, redFlower.getRedFlower())).append("\n");
+            stringBuilder.append(location.getLocation(result, circularArrayList, redFlower.getName())).append("\n");
 
             // 天喜
             SkyHappiness skyHappiness = new SkyHappiness();
             result = skyHappiness.calculate(tempBranch, skyHappiness.getMap());
             result = GetBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(location.getLocation(result, circularArrayList, skyHappiness.getSkyHappiness())).append("\n");
+            stringBuilder.append(location.getLocation(result, circularArrayList, skyHappiness.getName())).append("\n");
         }
         return stringBuilder;
     }

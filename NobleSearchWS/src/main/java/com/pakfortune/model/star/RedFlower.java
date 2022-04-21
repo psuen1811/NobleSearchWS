@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMap;
 /*
   紅鸞
  */
-public class RedFlower extends StarMap {
+public class RedFlower extends StarMap implements Star {
 
     private static final String RED_FLOWER = "紅鸞";
     private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()
@@ -27,7 +27,7 @@ public class RedFlower extends StarMap {
         return map;
     }
 
-    public static String getRedFlower() {
+    public String getName() {
         return RED_FLOWER;
     }
 }

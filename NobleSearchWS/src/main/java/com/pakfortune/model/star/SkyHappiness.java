@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMap;
 /*
   天喜
  */
-public class SkyHappiness extends StarMap {
+public class SkyHappiness extends StarMap implements Star {
 
     private static final String SKY_HAPPINESS = "天喜";
     private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()
@@ -27,7 +27,7 @@ public class SkyHappiness extends StarMap {
         return map;
     }
 
-    public static String getSkyHappiness() {
+    public String getName() {
         return SKY_HAPPINESS;
     }
 }
