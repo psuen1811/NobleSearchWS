@@ -34,42 +34,42 @@ public class NobleSearchService extends GetLocation {
 
             // 根據輸入干支飛遁六十甲子
             circularArrayList.shiftRight(lookup.getIfPresent(SixtyJiaziTable.class, input).ordinal());
-            GetLocation g = new GetLocation();
+            GetLocation location = new GetLocation();
             String result;
 
             // 找真祿干支
             Money money = new Money();
-            result = money.lookupMap(tempStem, Money.getMap());
-            stringBuilder.append(g.getLocation(result, circularArrayList, Money.getMONEY())).append("\n");
+            result = money.calculate(tempStem, money.getMap());
+            stringBuilder.append(location.getLocation(result, circularArrayList, money.getMONEY())).append("\n");
 
             // 找真馬干支
             Horse horse = new Horse();
             result = horse.checkStemBranch(tempStem, tempBranch).toString();
-            stringBuilder.append(g.getLocation(result, circularArrayList, Horse.getHORSE())).append("\n");
+            stringBuilder.append(location.getLocation(result, circularArrayList, horse.getHORSE())).append("\n");
 
             // 找貴人干支
             Richman richman = new Richman();
             List<String> richmanList = richman.lookupList(tempStem);
             for( String s : richmanList ) {
-                stringBuilder.append(g.getLocation(s, circularArrayList, Richman.getRICHMAN())).append("\n");
+                stringBuilder.append(location.getLocation(s, circularArrayList, richman.getRICHMAN())).append("\n");
             }
 
             // 真文昌
             Study study = new Study();
-            result = study.lookupMap(tempStem, Study.getMap());
-            stringBuilder.append(g.getLocation(result, circularArrayList, Study.getSTUDY())).append("\n");
+            result = study.calculate(tempStem, study.getMap());
+            stringBuilder.append(location.getLocation(result, circularArrayList, study.getSTUDY())).append("\n");
 
             // 紅鸞
             RedFlower redFlower = new RedFlower();
-            result = redFlower.lookupMap(tempBranch, RedFlower.getMap());
+            result = redFlower.calculate(tempBranch, redFlower.getMap());
             result = GetBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(g.getLocation(result, circularArrayList, RedFlower.getRedFlower())).append("\n");
+            stringBuilder.append(location.getLocation(result, circularArrayList, redFlower.getRedFlower())).append("\n");
 
             // 天喜
             SkyHappiness skyHappiness = new SkyHappiness();
-            result = skyHappiness.lookupMap(tempBranch, SkyHappiness.getMap());
+            result = skyHappiness.calculate(tempBranch, skyHappiness.getMap());
             result = GetBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(g.getLocation(result, circularArrayList, SkyHappiness.getSkyHappiness())).append("\n");
+            stringBuilder.append(location.getLocation(result, circularArrayList, skyHappiness.getSkyHappiness())).append("\n");
         }
         return stringBuilder;
     }

@@ -1,12 +1,11 @@
 package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
-import com.pakfortune.common.GetInformation;
 
 /*
   天喜
  */
-public class SkyHappiness extends GetInformation {
+public class SkyHappiness extends StarMap {
 
     private static final String SKY_HAPPINESS = "天喜";
     private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()

@@ -1,10 +1,9 @@
 package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
-import com.pakfortune.common.GetInformation;
 
 @SuppressWarnings("ALL")
-public class Study extends GetInformation {
+public class Study extends StarMap {
 
     private static final String STUDY = "文昌";
     private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()

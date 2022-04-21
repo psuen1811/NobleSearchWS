@@ -1,9 +1,9 @@
 package com.pakfortune.model.star;
 
-import com.pakfortune.common.GetInformationByStemBranch;
+import com.pakfortune.common.GetResultByStemBranch;
 import com.pakfortune.model.element.SixtyJiaziTable;
 
-public class Horse implements GetInformationByStemBranch {
+public class Horse implements GetResultByStemBranch {
 
     private static final String SOUTH = "寅午戌";
     private static final String NORTH = "申子辰";

@@ -2,11 +2,10 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableList;
-import com.pakfortune.common.GetInformationList;
 
 import java.util.List;
 
-public class Richman implements GetInformationList {
+public class Richman implements StarList {
 
     private static final String RICHMAN = "貴人";
     private static final ArrayListMultimap<String, String> list = ArrayListMultimap.create();

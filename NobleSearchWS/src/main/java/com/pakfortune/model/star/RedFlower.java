@@ -1,12 +1,11 @@
 package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
-import com.pakfortune.common.GetInformation;
 
 /*
   紅鸞
  */
-public class RedFlower extends GetInformation {
+public class RedFlower extends StarMap {
 
     private static final String RED_FLOWER = "紅鸞";
     private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()

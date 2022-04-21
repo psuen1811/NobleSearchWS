@@ -1,7 +1,7 @@
-package com.pakfortune.common;
+package com.pakfortune.model.star;
 
 import java.util.List;
 
-public interface GetInformationList {
+public interface StarList {
     List<String> lookupList(String input);
 }
