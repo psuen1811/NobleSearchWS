@@ -19,7 +19,7 @@ public class Study extends StarMap implements Star {
             .put("癸", "乙卯")
             .build();
 
-    public static ImmutableMap<String, String> getMap()  {
+    public static ImmutableMap<String, String> getMap() {
         return map;
     }
 

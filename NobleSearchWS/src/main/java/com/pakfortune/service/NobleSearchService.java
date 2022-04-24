@@ -24,11 +24,11 @@ public class NobleSearchService extends NoblesOutput {
 
         boolean stemBranchExists = lookup.ifInputExists(SixtyJiaziTable.class, input);
 
-        if(!stemBranchExists) {
+        if (!stemBranchExists) {
             return stringBuilder.append("Invalid input!");
         } else {
             // Separate stem and branch characters
-            String [] stemBranchArray = input.split("", 2);
+            String[] stemBranchArray = input.split("", 2);
             String tempStem = stemBranchArray[0];
             String tempBranch = stemBranchArray[1];
 
@@ -50,7 +50,7 @@ public class NobleSearchService extends NoblesOutput {
             // 找貴人干支
             Richman richman = new Richman();
             List<String> richmanList = richman.lookupList(tempStem);
-            for( String s : richmanList ) {
+            for (String s : richmanList) {
                 stringBuilder.append(noblesOutput.calculateAndPrint(s, circularArrayList, richman.getName())).append("\n");
             }
 

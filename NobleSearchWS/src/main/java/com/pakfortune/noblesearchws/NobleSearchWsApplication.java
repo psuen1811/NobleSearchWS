@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan({"com.pakfortune.api"})
 public class NobleSearchWsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(NobleSearchWsApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(NobleSearchWsApplication.class, args);
+    }
 
 }
