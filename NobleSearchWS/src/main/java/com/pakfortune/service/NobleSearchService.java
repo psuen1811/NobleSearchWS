@@ -39,7 +39,7 @@ public class NobleSearchService extends NoblesOutput {
 
             // 找真祿干支
             Money money = new Money();
-            result = money.calculate(tempStem, money.getMap());
+            result = money.lookupMap(tempStem, money.getMap());
             stringBuilder.append(noblesOutput.calculateAndPrint(result, circularArrayList, money.getName())).append("\n");
 
             // 找真馬干支
@@ -56,18 +56,18 @@ public class NobleSearchService extends NoblesOutput {
 
             // 真文昌
             Study study = new Study();
-            result = study.calculate(tempStem, study.getMap());
+            result = study.lookupMap(tempStem, study.getMap());
             stringBuilder.append(noblesOutput.calculateAndPrint(result, circularArrayList, study.getName())).append("\n");
 
             // 紅鸞
             RedFlower redFlower = new RedFlower();
-            result = redFlower.calculate(tempBranch, redFlower.getMap());
+            result = redFlower.lookupMap(tempBranch, redFlower.getMap());
             result = GetBranchByStem.calculate(tempStem, result);
             stringBuilder.append(noblesOutput.calculateAndPrint(result, circularArrayList, redFlower.getName())).append("\n");
 
             // 天喜
             SkyHappiness skyHappiness = new SkyHappiness();
-            result = skyHappiness.calculate(tempBranch, skyHappiness.getMap());
+            result = skyHappiness.lookupMap(tempBranch, skyHappiness.getMap());
             result = GetBranchByStem.calculate(tempStem, result);
             stringBuilder.append(noblesOutput.calculateAndPrint(result, circularArrayList, skyHappiness.getName())).append("\n");
         }
