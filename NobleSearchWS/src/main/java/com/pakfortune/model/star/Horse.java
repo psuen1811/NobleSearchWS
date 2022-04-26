@@ -20,13 +20,14 @@ public class Horse implements GetResultByStemBranch, Star {
     public SixtyJiaziTable checkStemBranch(String stem, String branch) {
         SixtyJiaziTable sixtyJiaziTable = null;
         if (SOUTH.contains(branch)) {
-            switch (stem) {
-                case "甲" -> sixtyJiaziTable = SixtyJiaziTable.壬申;
-                case "丙" -> sixtyJiaziTable = SixtyJiaziTable.丙申;
-                case "戊" -> sixtyJiaziTable = SixtyJiaziTable.庚申;
-                case "庚" -> sixtyJiaziTable = SixtyJiaziTable.甲申;
-                case "壬" -> sixtyJiaziTable = SixtyJiaziTable.戊申;
-            }
+            sixtyJiaziTable = switch (stem) {
+                case "甲" -> SixtyJiaziTable.壬申;
+                case "丙" -> SixtyJiaziTable.丙申;
+                case "戊" -> SixtyJiaziTable.庚申;
+                case "庚" -> SixtyJiaziTable.甲申;
+                case "壬" -> SixtyJiaziTable.戊申;
+                default -> sixtyJiaziTable;
+            };
         } else if (NORTH.contains(branch)) {
             sixtyJiaziTable = switch (stem) {
                 case "甲" -> SixtyJiaziTable.丙寅;
