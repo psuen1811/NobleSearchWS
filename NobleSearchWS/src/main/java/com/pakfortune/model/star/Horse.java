@@ -26,7 +26,7 @@ public class Horse implements GetResultByStemBranch, Star {
                 case "戊" -> SixtyJiaziTable.庚申;
                 case "庚" -> SixtyJiaziTable.甲申;
                 case "壬" -> SixtyJiaziTable.戊申;
-                default -> sixtyJiaziTable;
+                default -> null;
             };
         } else if (NORTH.contains(branch)) {
             sixtyJiaziTable = switch (stem) {
@@ -35,7 +35,7 @@ public class Horse implements GetResultByStemBranch, Star {
                 case "戊" -> SixtyJiaziTable.甲寅;
                 case "庚" -> SixtyJiaziTable.戊寅;
                 case "壬" -> SixtyJiaziTable.壬寅;
-                default -> sixtyJiaziTable;
+                default -> null;
             };
         } else if (EAST.contains(branch)) {
             sixtyJiaziTable = switch (stem) {
@@ -44,7 +44,7 @@ public class Horse implements GetResultByStemBranch, Star {
                 case "己" -> SixtyJiaziTable.己巳;
                 case "辛" -> SixtyJiaziTable.癸巳;
                 case "癸" -> SixtyJiaziTable.丁巳;
-                default -> sixtyJiaziTable;
+                default -> null;
             };
         } else if (WEST.contains(branch)) {
             sixtyJiaziTable = switch (stem) {
@@ -53,7 +53,7 @@ public class Horse implements GetResultByStemBranch, Star {
                 case "己" -> SixtyJiaziTable.乙亥;
                 case "辛" -> SixtyJiaziTable.己亥;
                 case "癸" -> SixtyJiaziTable.癸亥;
-                default -> sixtyJiaziTable;
+                default -> null;
             };
         }
         return sixtyJiaziTable;
