@@ -1,6 +1,5 @@
 package com.pakfortune.model.element;
 
-@SuppressWarnings("NonAsciiCharacters")
 public enum Stem {
     甲,        // 甲 (0)
     乙,        // 乙 (1)

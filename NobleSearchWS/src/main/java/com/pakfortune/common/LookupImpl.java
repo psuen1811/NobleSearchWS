@@ -7,7 +7,7 @@ import java.util.EnumSet;
 /*
  Validate and Lookup
  */
-@SuppressWarnings("ALL")
+@SuppressWarnings("all")
 public class LookupImpl implements LookupInterface {
 
     @Override

@@ -2,7 +2,7 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("all")
 public class Study extends StarMap implements Star {
 
     private static final String STUDY = "文昌";

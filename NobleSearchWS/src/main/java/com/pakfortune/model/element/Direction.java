@@ -1,5 +1,5 @@
 package com.pakfortune.model.element;
-@SuppressWarnings("NonAsciiCharacters")
+
 public enum Direction {
     中,
     乾,
