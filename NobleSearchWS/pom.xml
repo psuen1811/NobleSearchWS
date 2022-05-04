@@ -34,11 +34,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
-			</dependency>
+			<version>5.3.18</version>
+		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>29.0-jre</version>
+			<version>31.1-jre</version>
 		</dependency>
 	</dependencies>
 
