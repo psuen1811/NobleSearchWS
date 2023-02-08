@@ -1,4 +1,4 @@
-package com.pakfortune.model.star;
+package com.pakfortune.common;
 
 import java.util.List;
 

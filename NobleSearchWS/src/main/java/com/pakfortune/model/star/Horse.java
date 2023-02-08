@@ -1,6 +1,7 @@
 package com.pakfortune.model.star;
 
 import com.pakfortune.common.GetResultByStemBranch;
+import com.pakfortune.common.Star;
 import com.pakfortune.model.element.SixtyJiaziTable;
 
 public class Horse implements GetResultByStemBranch, Star {

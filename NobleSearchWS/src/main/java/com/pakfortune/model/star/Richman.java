@@ -2,6 +2,8 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableList;
+import com.pakfortune.common.Star;
+import com.pakfortune.common.StarList;
 
 import java.util.List;
 
