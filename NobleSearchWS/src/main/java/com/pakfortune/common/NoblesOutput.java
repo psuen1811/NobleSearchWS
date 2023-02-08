@@ -1,6 +1,5 @@
 package com.pakfortune.common;
 
-
 import com.pakfortune.model.element.Direction;
 import com.pakfortune.model.element.SixtyJiaziTable;
 

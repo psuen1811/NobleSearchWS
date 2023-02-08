@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.pakfortune.common.Star;
 import com.pakfortune.common.StarMap;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("all")
 public class Study extends StarMap implements Star {
 
     private static final String STUDY = "文昌";

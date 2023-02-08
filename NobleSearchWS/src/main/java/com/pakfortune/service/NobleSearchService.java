@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@SuppressWarnings("ALL")
+@SuppressWarnings("all")
 @Component
 public class NobleSearchService extends NoblesOutput {
 
