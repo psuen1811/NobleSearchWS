@@ -4,23 +4,30 @@ import com.pakfortune.common.GetResultByStemBranch;
 import com.pakfortune.common.Star;
 import com.pakfortune.model.element.SixtyJiaziTable;
 
+// Declaring Horse class implementing GetResultByStemBranch and Star interfaces
 public class Horse implements GetResultByStemBranch, Star {
 
+    // Defining constants for different directions
     private static final String SOUTH = "寅午戌";
     private static final String NORTH = "申子辰";
     private static final String EAST = "亥卯未";
     private static final String WEST = "巳酉丑";
 
+    // Defining constant for the star's name
     private static final String HORSE = "天馬";
 
+    // Implementing the getName() method from the Star interface
     public String getName() {
         return HORSE;
     }
 
+    // Overriding the checkStemBranch() method from the GetResultByStemBranch interface to return the corresponding
+    // Jiazi table based on the given stem and branch
     @Override
     public SixtyJiaziTable checkStemBranch(String stem, String branch) {
         SixtyJiaziTable sixtyJiaziTable = null;
         if (SOUTH.contains(branch)) {
+            // Using a switch statement to check the stem and assign the corresponding Jiazi table
             sixtyJiaziTable = switch (stem) {
                 case "甲" -> SixtyJiaziTable.壬申;
                 case "丙" -> SixtyJiaziTable.丙申;

@@ -9,9 +9,12 @@ import java.util.List;
 
 public class Richman implements StarList, Star {
 
+    // The name of the star
     private static final String RICHMAN = "貴人";
+    // A multimap that associates each stem with a list of branches that make up a Richman combination
     private static final ArrayListMultimap<String, String> list = ArrayListMultimap.create();
 
+    // Populate the multimap with the different combinations of stems and branches that make up a Richman
     static {
         list.put("甲", "丁丑");
         list.put("甲", "辛未");
@@ -35,10 +38,12 @@ public class Richman implements StarList, Star {
         list.put("癸", "丁巳");
     }
 
+    // Get the name of the star
     public String getName() {
         return RICHMAN;
     }
 
+    // Lookup a list of branches that make up a Richman combination for a given stem
     public List<String> lookupList(String input) {
         return ImmutableList.copyOf(list.get(input));
     }
