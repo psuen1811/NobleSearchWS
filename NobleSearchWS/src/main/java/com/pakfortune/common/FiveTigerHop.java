@@ -3,11 +3,9 @@ package com.pakfortune.common;
 import com.pakfortune.model.element.Stem;
 
 // 五虎遁
-public abstract class FiveTigerHop {
+public class FiveTigerHop extends LookupImpl {
 
-    private static final LookupInterface lookup = new LookupImpl();
-
-    public static Stem hop(String input) {
+    public Stem hop(String input) {
         String s = null;
         if (input.equals("甲") || input.equals("己"))
             s = "丙";
@@ -19,6 +17,6 @@ public abstract class FiveTigerHop {
             s = "壬";
         if (input.equals("戊") || input.equals("癸"))
             s = "甲";
-        return lookup.getIfPresent(Stem.class, s);
+        return getIfPresent(Stem.class, s);
     }
 }
