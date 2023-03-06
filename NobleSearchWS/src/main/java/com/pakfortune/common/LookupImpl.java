@@ -8,15 +8,13 @@ import java.util.EnumSet;
  Validate and Lookup
  */
 @SuppressWarnings("all")
-public abstract class LookupImpl implements LookupInterface {
+public abstract class LookupImpl  {
 
-    @Override
-    public <E extends Enum<E>> E getIfPresent(Class<E> clazz, String name) {
+    public static <E extends Enum<E>> E getIfPresent(Class<E> clazz, String name) {
         return Enums.getIfPresent(clazz, name).orNull();
     }
 
-    @Override
-    public <E extends Enum<E>> boolean ifInputExists(Class<E> clazz, String value) {
+    public static <E extends Enum<E>> boolean ifInputExists(Class<E> clazz, String value) {
         try {
             return EnumSet.allOf(clazz).contains(Enum.valueOf(clazz, value));
         } catch (Exception e) {
@@ -24,8 +22,7 @@ public abstract class LookupImpl implements LookupInterface {
         }
     }
 
-    @Override
-    public <E extends Enum<E>> E findByValue(Class<E> clazz, int value) {
+    public static <E extends Enum<E>> E findByValue(Class<E> clazz, int value) {
         return clazz.getEnumConstants()[value];
     }
 }

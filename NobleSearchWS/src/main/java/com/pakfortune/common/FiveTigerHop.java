@@ -4,7 +4,7 @@ import com.pakfortune.model.element.Stem;
 
 // 五虎遁
 public class FiveTigerHop extends LookupImpl {
-    public Stem hop(String input) {
+    public static Stem hop(String input) {
         String targetStem = switch (input) {
             case "甲", "己" -> "丙";
             case "乙", "庚" -> "戊";
