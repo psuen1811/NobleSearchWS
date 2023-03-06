@@ -13,7 +13,7 @@ import java.util.List;
 
 @SuppressWarnings("all")
 @Component
-public class NobleSearchService extends LookupUtils {
+public class NobleSearchService {
 
     public StringBuilder getNobles(String input) {
         StringBuilder stringBuilder = new StringBuilder("-------真祿馬貴人-------\n\n");
@@ -21,7 +21,7 @@ public class NobleSearchService extends LookupUtils {
         List<Integer> sixJiaziList = Lists.newArrayList(SixtyJiaziTable.getSixJiaziList());
         CircularArrayList<Integer> circularArrayList = new CircularArrayList<>(sixJiaziList);
 
-        boolean stemBranchExists = ifInputExists(SixtyJiaziTable.class, input);
+        boolean stemBranchExists = LookupUtils.ifInputExists(SixtyJiaziTable.class, input);
 
         if (!stemBranchExists) {
             return stringBuilder.append("Invalid input!");
@@ -32,7 +32,7 @@ public class NobleSearchService extends LookupUtils {
             String tempBranch = stemBranchArray[1];
 
             // 根據輸入干支飛遁六十甲子
-            circularArrayList.shiftRight(getIfPresent(SixtyJiaziTable.class, input).ordinal());
+            circularArrayList.shiftRight(LookupUtils.getIfPresent(SixtyJiaziTable.class, input).ordinal());
             String result;
 
             // 找真祿干支

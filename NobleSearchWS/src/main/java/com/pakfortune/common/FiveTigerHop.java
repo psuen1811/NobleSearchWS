@@ -3,7 +3,7 @@ package com.pakfortune.common;
 import com.pakfortune.model.element.Stem;
 
 // 五虎遁
-public abstract class FiveTigerHop extends LookupUtils {
+public abstract class FiveTigerHop {
     public static Stem hop(String input) {
         String targetStem = switch (input) {
             case "甲", "己" -> "丙";
@@ -14,7 +14,7 @@ public abstract class FiveTigerHop extends LookupUtils {
             default -> throw new IllegalArgumentException("Invalid input value: " + input);
         };
 
-        return getIfPresent(Stem.class, targetStem);
+        return LookupUtils.getIfPresent(Stem.class, targetStem);
     }
 }
 
