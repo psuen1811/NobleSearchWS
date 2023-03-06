@@ -3,7 +3,7 @@ package com.pakfortune.common;
 import com.pakfortune.model.element.Stem;
 
 // 五虎遁
-public abstract class FiveTigerHop extends LookupImpl {
+public abstract class FiveTigerHop extends LookupUtils {
     public static Stem hop(String input) {
         String targetStem = switch (input) {
             case "甲", "己" -> "丙";

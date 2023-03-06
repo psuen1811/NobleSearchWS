@@ -3,7 +3,7 @@ package com.pakfortune.common;
 import com.pakfortune.model.element.Direction;
 import com.pakfortune.model.element.SixtyJiaziTable;
 
-public abstract class NoblesOutput extends LookupImpl {
+public abstract class NoblesOutput extends LookupUtils {
     private static final int MAGIC_NUMBER = 9;
 
     public static String calculateAndPrint(String result, CircularArrayList<Integer> circularArrayList, String name) {

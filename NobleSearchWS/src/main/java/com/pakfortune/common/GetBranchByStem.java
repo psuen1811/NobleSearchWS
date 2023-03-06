@@ -5,7 +5,7 @@ import com.pakfortune.model.element.Stem;
 
 import static java.lang.Math.abs;
 
-public abstract class GetBranchByStem extends LookupImpl {
+public abstract class GetBranchByStem extends LookupUtils {
 
     public static String calculate(String stem, String location) {
         // 取地支序數

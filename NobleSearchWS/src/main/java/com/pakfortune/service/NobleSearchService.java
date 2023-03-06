@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.pakfortune.common.CircularArrayList;
 import com.pakfortune.common.GetBranchByStem;
 import com.pakfortune.common.NoblesOutput;
-import com.pakfortune.common.LookupImpl;
+import com.pakfortune.common.LookupUtils;
 import com.pakfortune.model.element.SixtyJiaziTable;
 import com.pakfortune.model.star.*;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @SuppressWarnings("all")
 @Component
-public class NobleSearchService extends LookupImpl {
+public class NobleSearchService extends LookupUtils {
 
     public StringBuilder getNobles(String input) {
         StringBuilder stringBuilder = new StringBuilder("-------真祿馬貴人-------\n\n");

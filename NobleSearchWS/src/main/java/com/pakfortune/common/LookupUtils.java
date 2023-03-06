@@ -8,7 +8,7 @@ import java.util.EnumSet;
  Validate and Lookup
  */
 @SuppressWarnings("all")
-public abstract class LookupImpl  {
+public abstract class LookupUtils {
 
     public static <E extends Enum<E>> E getIfPresent(Class<E> clazz, String name) {
         return Enums.getIfPresent(clazz, name).orNull();
