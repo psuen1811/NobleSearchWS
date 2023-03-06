@@ -45,6 +45,7 @@ public class Richman implements StarList, Star {
     }
 
     // Lookup a list of branches that make up a Richman combination for a given stem
+    @Override
     public List<String> lookupList(String input) {
         return ImmutableList.copyOf(list.get(input));
     }
