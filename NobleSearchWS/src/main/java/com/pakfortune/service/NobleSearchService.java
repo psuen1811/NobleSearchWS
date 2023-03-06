@@ -16,8 +16,6 @@ import java.util.List;
 public class NobleSearchService extends LookupImpl {
 
     public StringBuilder getNobles(String input) {
-        NoblesOutput output = new NoblesOutput();
-        GetBranchByStem getBranchByStem = new GetBranchByStem();
         StringBuilder stringBuilder = new StringBuilder("-------真祿馬貴人-------\n\n");
         // declare 60 lunar "六十甲子"" by sequence
         List<Integer> sixJiaziList = Lists.newArrayList(SixtyJiaziTable.getSixJiaziList());
@@ -40,36 +38,36 @@ public class NobleSearchService extends LookupImpl {
             // 找真祿干支
             Money money = new Money();
             result = money.lookupMap(tempStem, money.getMap());
-            stringBuilder.append(output.calculateAndPrint(result, circularArrayList, money.getName())).append("\n");
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, money.getName())).append("\n");
 
             // 找真馬干支
             Horse horse = new Horse();
             result = horse.checkStemBranch(tempStem, tempBranch).toString();
-            stringBuilder.append(output.calculateAndPrint(result, circularArrayList, horse.getName())).append("\n");
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, horse.getName())).append("\n");
 
             // 找貴人干支
             Richman richman = new Richman();
             List<String> richmanList = richman.lookupList(tempStem);
             for (String s : richmanList) {
-                stringBuilder.append(output.calculateAndPrint(s, circularArrayList, richman.getName())).append("\n");
+                stringBuilder.append(NoblesOutput.calculateAndPrint(s, circularArrayList, richman.getName())).append("\n");
             }
 
             // 真文昌
             Study study = new Study();
             result = study.lookupMap(tempStem, study.getMap());
-            stringBuilder.append(output.calculateAndPrint(result, circularArrayList, study.getName())).append("\n");
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, study.getName())).append("\n");
 
             // 紅鸞
             RedFlower redFlower = new RedFlower();
             result = redFlower.lookupMap(tempBranch, redFlower.getMap());
-            result = getBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(output.calculateAndPrint(result, circularArrayList, redFlower.getName())).append("\n");
+            result = GetBranchByStem.calculate(tempStem, result);
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, redFlower.getName())).append("\n");
 
             // 天喜
             SkyHappiness skyHappiness = new SkyHappiness();
             result = skyHappiness.lookupMap(tempBranch, skyHappiness.getMap());
-            result = getBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(output.calculateAndPrint(result, circularArrayList, skyHappiness.getName())).append("\n");
+            result = GetBranchByStem.calculate(tempStem, result);
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, skyHappiness.getName())).append("\n");
         }
         return stringBuilder;
     }
