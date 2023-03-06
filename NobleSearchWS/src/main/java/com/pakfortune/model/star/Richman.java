@@ -39,6 +39,7 @@ public class Richman implements StarList, Star {
     }
 
     // Get the name of the star
+    @Override
     public String getName() {
         return RICHMAN;
     }

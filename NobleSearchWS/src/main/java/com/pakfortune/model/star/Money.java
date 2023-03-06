@@ -29,6 +29,7 @@ public class Money extends StarMap implements Star {
     }
 
     // Returns the name of this star
+    @Override
     public String getName() {
         return MONEY;
     }

@@ -17,6 +17,7 @@ public class Horse implements GetResultByStemBranch, Star {
     private static final String HORSE = "天馬";
 
     // Implementing the getName() method from the Star interface
+    @Override
     public String getName() {
         return HORSE;
     }

@@ -29,6 +29,7 @@ public class RedFlower extends StarMap implements Star {
         return map;
     }
 
+    @Override
     public String getName() {
         return RED_FLOWER;
     }

@@ -25,6 +25,7 @@ public class Study extends StarMap implements Star {
         return map;
     }
 
+    @Override
     public String getName() {
         return STUDY;
     }

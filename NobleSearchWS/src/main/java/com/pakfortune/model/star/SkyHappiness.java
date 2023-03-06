@@ -29,6 +29,7 @@ public class SkyHappiness extends StarMap implements Star {
         return map;
     }
 
+    @Override
     public String getName() {
         return SKY_HAPPINESS;
     }
