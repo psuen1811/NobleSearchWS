@@ -1,7 +1,5 @@
 package com.pakfortune.model.element;
 
-import com.google.common.collect.ImmutableList;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
