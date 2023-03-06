@@ -1,7 +1,7 @@
 package com.pakfortune.common;
 
-import com.pakfortune.model.element.SixtyJiaziTable;
+import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
 
 public interface GetResultByStemBranch {
-    SixtyJiaziTable checkStemBranch(String stem, String branch);
+    SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch);
 }

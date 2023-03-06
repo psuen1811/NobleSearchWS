@@ -5,7 +5,7 @@ import com.pakfortune.common.CircularArrayList;
 import com.pakfortune.common.GetBranchByStem;
 import com.pakfortune.common.NoblesOutput;
 import com.pakfortune.common.LookupUtils;
-import com.pakfortune.model.element.SixtyJiaziTable;
+import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
 import com.pakfortune.model.star.*;
 import org.springframework.stereotype.Component;
 
@@ -18,10 +18,10 @@ public class NobleSearchService {
     public StringBuilder getNobles(String input) {
         StringBuilder stringBuilder = new StringBuilder("-------真祿馬貴人-------\n\n");
         // declare 60 lunar "六十甲子"" by sequence
-        List<Integer> sixJiaziList = Lists.newArrayList(SixtyJiaziTable.getSixJiaziList());
+        List<Integer> sixJiaziList = Lists.newArrayList(SIXTY_JIAZI_TABLE.getSixJiaziList());
         CircularArrayList<Integer> circularArrayList = new CircularArrayList<>(sixJiaziList);
 
-        boolean stemBranchExists = LookupUtils.ifInputExists(SixtyJiaziTable.class, input);
+        boolean stemBranchExists = LookupUtils.ifInputExists(SIXTY_JIAZI_TABLE.class, input);
 
         if (!stemBranchExists) {
             return stringBuilder.append("Invalid input!");
@@ -32,7 +32,7 @@ public class NobleSearchService {
             String tempBranch = stemBranchArray[1];
 
             // 根據輸入干支飛遁六十甲子
-            circularArrayList.shiftRight(LookupUtils.getIfPresent(SixtyJiaziTable.class, input).ordinal());
+            circularArrayList.shiftRight(LookupUtils.getIfPresent(SIXTY_JIAZI_TABLE.class, input).ordinal());
             String result;
 
             // 找真祿干支
