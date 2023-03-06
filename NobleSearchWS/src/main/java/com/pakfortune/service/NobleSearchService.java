@@ -46,7 +46,7 @@ public class NobleSearchService {
             stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, horse.getName())).append("\n");
 
             // 找貴人干支
-            Richman richman = new Richman();
+            RichMan richman = new RichMan();
             List<String> richmanList = richman.lookupList(tempStem);
             for (String s : richmanList) {
                 stringBuilder.append(NoblesOutput.calculateAndPrint(s, circularArrayList, richman.getName())).append("\n");

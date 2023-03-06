@@ -7,10 +7,13 @@ import com.pakfortune.common.StarMap;
 /*
   紅鸞
  */
+/**
+ * Represents a Red Flower in the Star Map.
+ */
 public class RedFlower extends StarMap implements Star {
 
     private static final String RED_FLOWER = "紅鸞";
-    private static final ImmutableMap<String, String> map = ImmutableMap.<String, String>builder()
+    private static final ImmutableMap<String, String> MAP = ImmutableMap.<String, String>builder()
             .put("子", "卯")
             .put("丑", "寅")
             .put("寅", "丑")
@@ -25,12 +28,19 @@ public class RedFlower extends StarMap implements Star {
             .put("亥", "辰")
             .build();
 
+    /**
+     * Returns the immutable map of Chinese zodiac signs.
+     */
     public static ImmutableMap<String, String> getMap() {
-        return map;
+        return MAP;
     }
 
+    /**
+     * Returns the name of the star, which is "紅鸞".
+     */
     @Override
     public String getName() {
         return RED_FLOWER;
     }
 }
+
