@@ -10,7 +10,7 @@ import com.pakfortune.common.StarMap;
 /**
  * Represents a Red Flower in the Star Map.
  */
-public class RedFlower extends StarMap implements Star {
+public class RedFlower implements Star {
 
     private static final String RED_FLOWER = "紅鸞";
     private static final ImmutableMap<String, String> MAP = ImmutableMap.<String, String>builder()
