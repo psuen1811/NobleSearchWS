@@ -1,10 +1,7 @@
 package com.pakfortune.service;
 
 import com.google.common.collect.Lists;
-import com.pakfortune.common.CircularArrayList;
-import com.pakfortune.common.GetBranchByStem;
-import com.pakfortune.common.NoblesOutput;
-import com.pakfortune.common.LookupUtils;
+import com.pakfortune.common.*;
 import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
 import com.pakfortune.model.star.*;
 import org.springframework.stereotype.Component;
@@ -36,9 +33,8 @@ public class NobleSearchService {
             String result;
 
             // 找真祿干支
-            Money money = new Money();
-            result = money.lookupMap(tempStem, money.getMap());
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, money.getName())).append("\n");
+            result = StarMap.lookupMap(tempStem, new Money().getMap());
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, new Money().getName())).append("\n");
 
             // 找真馬干支
             Horse horse = new Horse();
@@ -53,21 +49,18 @@ public class NobleSearchService {
             }
 
             // 真文昌
-            Study study = new Study();
-            result = study.lookupMap(tempStem, study.getMap());
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, study.getName())).append("\n");
+            result = StarMap.lookupMap(tempStem, new Study().getMap());
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, new Study().getName())).append("\n");
 
             // 紅鸞
-            RedFlower redFlower = new RedFlower();
-            result = redFlower.lookupMap(tempBranch, redFlower.getMap());
+            result = StarMap.lookupMap(tempBranch, new RedFlower().getMap());
             result = GetBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, redFlower.getName())).append("\n");
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, new RedFlower().getName())).append("\n");
 
             // 天喜
-            SkyHappiness skyHappiness = new SkyHappiness();
-            result = skyHappiness.lookupMap(tempBranch, skyHappiness.getMap());
+            result = StarMap.lookupMap(tempBranch, new SkyHappiness().getMap());
             result = GetBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, skyHappiness.getName())).append("\n");
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, new SkyHappiness().getName())).append("\n");
         }
         return stringBuilder;
     }
