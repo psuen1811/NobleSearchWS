@@ -37,15 +37,15 @@ public class NobleSearchService {
             stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, new Money().getName())).append("\n");
 
             // 找真馬干支
-            Horse horse = new Horse();
-            result = horse.checkStemBranch(tempStem, tempBranch).toString();
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, horse.getName())).append("\n");
+            GetResultByStemBranch horseResult = new Horse();
+            result = horseResult.checkStemBranch(tempStem, tempBranch).toString();
+            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, new Horse().getName())).append("\n");
 
             // 找貴人干支
-            RichMan richman = new RichMan();
-            List<String> richmanList = richman.lookupList(tempStem);
+            StarList richmanStarList = new RichMan();
+            List<String> richmanList = richmanStarList.lookupList(tempStem);
             for (String s : richmanList) {
-                stringBuilder.append(NoblesOutput.calculateAndPrint(s, circularArrayList, richman.getName())).append("\n");
+                stringBuilder.append(NoblesOutput.calculateAndPrint(s, circularArrayList, new RichMan().getName())).append("\n");
             }
 
             // 真文昌
