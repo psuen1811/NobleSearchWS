@@ -8,7 +8,7 @@ import com.pakfortune.common.StarMap;
 /**
  * Represents the Study star in the Star Map.
  */
-public class Study implements Star, StarMap {
+public class Study implements StarMap {
 
     // Defining constant for the star's name
     private static final String STUDY = "文昌";

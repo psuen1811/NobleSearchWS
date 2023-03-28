@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Represents a Rich Man in the Star List.
  */
-public class RichMan implements StarList, Star {
+public class RichMan implements StarList {
 
     // The name of the star
     private static final String RICH_MAN = "貴人";

@@ -10,7 +10,7 @@ import com.pakfortune.common.StarMap;
 /**
  * Represents the Sky Happiness star in the Star Map.
  */
-public class SkyHappiness implements Star, StarMap {
+public class SkyHappiness implements StarMap {
 
     // Defining constant for the star's name
     private static final String SKY_HAPPINESS = "天喜";

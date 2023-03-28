@@ -7,7 +7,7 @@ import com.pakfortune.common.StarMap;
 /**
  * Represents the Money star in the Star Map.
  */
-public class Money implements Star, StarMap {
+public class Money implements StarMap {
 
     // Defining constant for the star's name
     private static final String MONEY = "祿存";
