@@ -2,7 +2,6 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
 import com.pakfortune.common.Star;
-import com.pakfortune.common.StarMap;
 
 /**
  * Represents the Money star in the Star Map.
@@ -32,7 +31,7 @@ public class Money implements Star {
     /**
      * Returns the map that associates each stem with a branch that makes up a Money combination.
      */
-    public static ImmutableMap<String, String> getMap() {
+    public ImmutableMap<String, String> getMap() {
         return MAP;
     }
 

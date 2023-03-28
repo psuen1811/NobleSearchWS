@@ -2,7 +2,6 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
 import com.pakfortune.common.Star;
-import com.pakfortune.common.StarMap;
 
 /*
   天喜
