@@ -2,6 +2,7 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
 import com.pakfortune.common.Star;
+import com.pakfortune.common.StarMap;
 
 /*
   天喜
@@ -9,7 +10,7 @@ import com.pakfortune.common.Star;
 /**
  * Represents the Sky Happiness star in the Star Map.
  */
-public class SkyHappiness implements Star {
+public class SkyHappiness implements Star, StarMap {
 
     // Defining constant for the star's name
     private static final String SKY_HAPPINESS = "天喜";

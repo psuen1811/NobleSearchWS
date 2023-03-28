@@ -2,12 +2,13 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
 import com.pakfortune.common.Star;
+import com.pakfortune.common.StarMap;
 
 @SuppressWarnings("all")
 /**
  * Represents the Study star in the Star Map.
  */
-public class Study implements Star {
+public class Study implements Star, StarMap {
 
     // Defining constant for the star's name
     private static final String STUDY = "文昌";

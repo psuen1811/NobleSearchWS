@@ -2,6 +2,7 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
 import com.pakfortune.common.Star;
+import com.pakfortune.common.StarMap;
 
 /*
   紅鸞
@@ -9,7 +10,7 @@ import com.pakfortune.common.Star;
 /**
  * Represents a Red Flower in the Star Map.
  */
-public class RedFlower implements Star {
+public class RedFlower implements Star, StarMap {
 
     private static final String RED_FLOWER = "紅鸞";
     private static final ImmutableMap<String, String> MAP = ImmutableMap.<String, String>builder()
