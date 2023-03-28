@@ -2,9 +2,9 @@ package com.pakfortune.common;
 
 import com.google.common.collect.ImmutableMap;
 
-public abstract class StarMap {
+public interface StarMap {
 
-    public static String lookupMap(String input, ImmutableMap<String, String> mapper) {
-        return mapper.get(input);
+    default <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper) {
+        return mapper.get(input).toString();
     }
 }
