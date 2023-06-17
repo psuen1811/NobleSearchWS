@@ -25,7 +25,7 @@ public class Horse implements GetResultByStemBranch, Star {
     // Overriding the checkStemBranch() method from the GetResultByStemBranch interface to return the corresponding
     // Jiazi table based on the given stem and branch
     @Override
-    public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) {
+    public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) throws IllegalArgumentException {
         SIXTY_JIAZI_TABLE sixtyJiaziTable = null;
         if (SOUTH.contains(branch)) {
             // Using a switch statement to check the stem and assign the corresponding Jiazi table
@@ -64,6 +64,11 @@ public class Horse implements GetResultByStemBranch, Star {
                 case "癸" -> SIXTY_JIAZI_TABLE.癸亥;
                 default -> null;
             };
+        } else {
+            throw new IllegalArgumentException("Invalid branch: " + branch);
+        }
+        if(sixtyJiaziTable == null) {
+            throw new IllegalArgumentException("Invalid stem: " + stem);
         }
         return sixtyJiaziTable;
     }
