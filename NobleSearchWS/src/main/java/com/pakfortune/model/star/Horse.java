@@ -4,7 +4,10 @@ import com.pakfortune.common.GetResultByStemBranch;
 import com.pakfortune.common.Star;
 import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
 
-// Declaring Horse class implementing GetResultByStemBranch and Star interfaces
+/**
+ * This class represents the "Horse" celestial stem in Chinese astrology.
+ * It implements the GetResultByStemBranch and Star interfaces.
+ */
 public class Horse implements GetResultByStemBranch, Star {
 
     // Defining constants for different directions
@@ -16,17 +19,29 @@ public class Horse implements GetResultByStemBranch, Star {
     // Defining constant for the star's name
     private static final String HORSE = "天馬";
 
-    // Implementing the getName() method from the Star interface
+    /**
+     * This method overrides the getName() method from the Star interface.
+     * It returns the name of this Star object.
+     *
+     * @return A String representing the name of the Star, in this case "Horse".
+     */
     @Override
     public String getName() {
         return HORSE;
     }
 
-    // Overriding the checkStemBranch() method from the GetResultByStemBranch interface to return the corresponding
-    // Jiazi table based on the given stem and branch
+    /**
+     * This method overrides the checkStemBranch() method from the GetResultByStemBranch interface.
+     * It checks the given stem and branch and returns the corresponding Jiazi table.
+     *
+     * @param stem The stem to be checked as a String.
+     * @param branch The branch to be checked as a String.
+     * @return A SIXTY_JIAZI_TABLE object representing the corresponding Jiazi table.
+     * @throws IllegalArgumentException If the provided stem or branch is invalid.
+     */
     @Override
     public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) throws IllegalArgumentException {
-        SIXTY_JIAZI_TABLE sixtyJiaziTable = null;
+        SIXTY_JIAZI_TABLE sixtyJiaziTable;
         if (SOUTH.contains(branch)) {
             // Using a switch statement to check the stem and assign the corresponding Jiazi table
             sixtyJiaziTable = switch (stem) {
