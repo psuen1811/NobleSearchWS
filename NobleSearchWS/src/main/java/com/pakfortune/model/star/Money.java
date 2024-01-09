@@ -1,12 +1,14 @@
 package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
-import com.pakfortune.common.StarMap;
+import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
+
+import java.util.List;
 
 /**
  * Represents the Money star in the Star Map.
  */
-public class Money implements StarMap {
+public class Money implements Star {
 
     // Defining constant for the star's name
     private static final String MONEY = "祿存";
@@ -41,6 +43,21 @@ public class Money implements StarMap {
     @Override
     public String getName() {
         return MONEY;
+    }
+
+    @Override
+    public List<String> lookupList(String input) {
+        return null;
+    }
+
+    @Override
+    public <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper) {
+        V value = mapper.get(input);
+        return value != null ? value.toString() : null;    }
+
+    @Override
+    public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) {
+        return null;
     }
 }
 

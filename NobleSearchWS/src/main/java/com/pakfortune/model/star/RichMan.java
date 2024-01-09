@@ -2,15 +2,16 @@ package com.pakfortune.model.star;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
-import com.pakfortune.common.StarList;
+import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
 
 import java.util.List;
 
 /**
  * Represents a Rich Man in the Star List.
  */
-public class RichMan implements StarList {
+public class RichMan implements Star {
 
     // The name of the star
     private static final String RICH_MAN = "貴人";
@@ -56,6 +57,21 @@ public class RichMan implements StarList {
     @Override
     public List<String> lookupList(String input) {
         return ImmutableList.copyOf(LIST.get(input));
+    }
+
+    @Override
+    public ImmutableMap<String, String> getMap() {
+        return null;
+    }
+
+    @Override
+    public <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper) {
+        return null;
+    }
+
+    @Override
+    public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) {
+        return null;
     }
 }
 

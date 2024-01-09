@@ -1,7 +1,9 @@
 package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
-import com.pakfortune.common.StarMap;
+import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
+
+import java.util.List;
 
 /*
   紅鸞
@@ -9,7 +11,7 @@ import com.pakfortune.common.StarMap;
 /**
  * Represents a Red Flower in the Star Map.
  */
-public class RedFlower implements StarMap {
+public class RedFlower implements Star {
 
     private static final String RED_FLOWER = "紅鸞";
     private static final ImmutableMap<String, String> MAP = ImmutableMap.<String, String>builder()
@@ -30,7 +32,7 @@ public class RedFlower implements StarMap {
     /**
      * Returns the immutable map of Chinese zodiac signs.
      */
-    public static ImmutableMap<String, String> getMap() {
+    public ImmutableMap<String, String> getMap() {
         return MAP;
     }
 
@@ -40,6 +42,21 @@ public class RedFlower implements StarMap {
     @Override
     public String getName() {
         return RED_FLOWER;
+    }
+
+    @Override
+    public List<String> lookupList(String input) {
+        return null;
+    }
+
+    @Override
+    public <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper) {
+        V value = mapper.get(input);
+        return value != null ? value.toString() : null;    }
+
+    @Override
+    public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) {
+        return null;
     }
 }
 

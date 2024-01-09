@@ -16,6 +16,8 @@ import java.util.List;
  */
 public class NobleSearchService {
 
+    CircularArrayList<Integer> circularArrayList = initializeJiaziList();
+
     /**
      * This method calculates the noble persons based on the input string.
      *
@@ -24,59 +26,79 @@ public class NobleSearchService {
      */
     public StringBuilder getNobles(String input) {
         StringBuilder stringBuilder = new StringBuilder("-------真祿馬貴人-------\n\n");
-        // declare 60 lunar "六十甲子"" by sequence
-        List<Integer> sixJiaziList = Lists.newArrayList(SIXTY_JIAZI_TABLE.getSixJiaziList());
-        CircularArrayList<Integer> circularArrayList = new CircularArrayList<>(sixJiaziList);
 
-        boolean stemBranchExists = LookupUtils.ifInputExists(SIXTY_JIAZI_TABLE.class, input);
-
-        if (!stemBranchExists) {
-            return stringBuilder.append("Invalid input!");
-        } else {
-            // Separate stem and branch characters
-            String[] stemBranchArray = input.split("", 2);
-            String tempStem = stemBranchArray[0];
-            String tempBranch = stemBranchArray[1];
-
-            // Based on the input stem and branch, rotate the Sixty Jiazi Table.
-            circularArrayList.shiftRight(LookupUtils.getIfPresent(SIXTY_JIAZI_TABLE.class, input).ordinal());
-            String result;
-
-            // Find the stem and branch for Money
-            Money money = new Money();
-            result = money.lookupMap(tempStem, money.getMap());
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, money.getName())).append("\n");
-
-            // Find the stem and branch for Horse
-            Horse horseResult = new Horse();
-            result = horseResult.checkStemBranch(tempStem, tempBranch).toString();
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, horseResult.getName())).append("\n");
-
-            // Find the stem and branch for Rich Man
-            RichMan richman = new RichMan();
-            List<String> richmanList = richman.lookupList(tempStem);
-            for (String s : richmanList) {
-                stringBuilder.append(NoblesOutput.calculateAndPrint(s, circularArrayList, richman.getName())).append("\n");
-            }
-
-            // Find the stem and branch for Study
-            Study study = new Study();
-            result = study.lookupMap(tempStem, study.getMap());
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, study.getName())).append("\n");
-
-            // Find the stem and branch for RedFlower
-            RedFlower redFlower = new RedFlower();
-            result = redFlower.lookupMap(tempBranch, redFlower.getMap());
-            result = GetBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, redFlower.getName())).append("\n");
-
-            // Find the stem and branch for SkyHappiness
-            SkyHappiness skyHappiness = new SkyHappiness();
-            result = skyHappiness.lookupMap(tempBranch, skyHappiness.getMap());
-            result = GetBranchByStem.calculate(tempStem, result);
-            stringBuilder.append(NoblesOutput.calculateAndPrint(result, circularArrayList, skyHappiness.getName())).append("\n");
+        // Check if input is valid
+        if (!LookupUtils.ifInputExists(SIXTY_JIAZI_TABLE.class, input)) {
+            throw new IllegalArgumentException("Invalid input!");
         }
+
+        String[] stemBranchArray = input.split("", 2);
+        String stem = stemBranchArray[0];
+        String branch = stemBranchArray[1];
+
+        circularArrayList.shiftRight(LookupUtils.getIfPresent(SIXTY_JIAZI_TABLE.class, input).ordinal());
+
+        stringBuilder.append(getNobleOutput("Money", stem, circularArrayList));
+        stringBuilder.append(getNobleOutput("Horse", stem, branch, circularArrayList));
+        stringBuilder.append(getRichManOutput(stem));
+        stringBuilder.append(getNobleOutput("Study", stem, circularArrayList));
+        stringBuilder.append(getFlowerNobleOutput("RedFlower", stem, branch, circularArrayList));
+        stringBuilder.append(getFlowerNobleOutput("SkyHappiness", stem, branch, circularArrayList));
+
         return stringBuilder;
+    }
+
+    private CircularArrayList<Integer> initializeJiaziList() {
+        List<Integer> sixJiaziList = Lists.newArrayList(SIXTY_JIAZI_TABLE.getSixJiaziList());
+        return new CircularArrayList<>(sixJiaziList);
+    }
+
+    private String getFlowerNobleOutput(String nobleName, String stem, String branch, CircularArrayList<Integer> circularArrayList) {
+        Star noble = createNobleByName(nobleName);
+        String location = noble.lookupMap(branch, noble.getMap());
+        String result = GetBranchByStem.calculate(stem, location);
+        return NoblesOutput.calculateAndPrint(result, circularArrayList, noble.getName()) + "\n";
+    }
+
+    private String getNobleOutput(String nobleName, String stem, CircularArrayList<Integer> circularArrayList) {
+        Star noble = createNobleByName(nobleName);
+        String result = noble.lookupMap(stem, noble.getMap());
+        return NoblesOutput.calculateAndPrint(result, circularArrayList, noble.getName()) + "\n";
+    }
+
+    private String getNobleOutput(String nobleName, String stem, String branch, CircularArrayList<Integer> circularArrayList) {
+        Star noble = createNobleByName(nobleName);
+        String result = noble.checkStemBranch(stem, branch).toString();
+        return NoblesOutput.calculateAndPrint(result, circularArrayList, noble.getName()) + "\n";
+    }
+
+    private String getRichManOutput(String stem) {
+        RichMan richMan = new RichMan();
+        List<String> richmanList = richMan.lookupList(stem);
+        StringBuilder resultBuilder = new StringBuilder();
+
+        for (String s : richmanList) {
+            resultBuilder.append(NoblesOutput.calculateAndPrint(s, circularArrayList, richMan.getName())).append("\n");
+        }
+
+        return resultBuilder.toString();
+    }
+
+    private Star createNobleByName(String nobleName) {
+        switch (nobleName) {
+            case "Money":
+                return new Money();
+            case "Horse":
+                return new Horse();
+            case "Study":
+                return new Study();
+            case "RedFlower":
+                return new RedFlower();
+            case "SkyHappiness":
+                return new SkyHappiness();
+            default:
+                throw new IllegalArgumentException("Invalid noble name: " + nobleName);
+        }
     }
 }
 
