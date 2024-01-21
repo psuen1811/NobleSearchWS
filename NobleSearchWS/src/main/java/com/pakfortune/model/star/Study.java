@@ -1,9 +1,6 @@
 package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
-import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
-
-import java.util.List;
 
 @SuppressWarnings("all")
 /**
@@ -34,6 +31,7 @@ public class Study implements Star {
     /**
      * Returns the map that associates each stem with a branch that makes up a Study combination.
      */
+    @Override
     public ImmutableMap<String, String> getMap() {
         return MAP;
     }
@@ -46,19 +44,5 @@ public class Study implements Star {
         return STUDY;
     }
 
-    @Override
-    public List<String> lookupList(String input) {
-        return null;
-    }
-
-    @Override
-    public <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper) {
-        V value = mapper.get(input);
-        return value != null ? value.toString() : null;    }
-
-    @Override
-    public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) {
-        return null;
-    }
 }
 

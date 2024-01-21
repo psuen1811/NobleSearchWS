@@ -3,8 +3,6 @@ package com.pakfortune.model.star;
 import com.google.common.collect.ImmutableMap;
 import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
 
-import java.util.List;
-
 /**
  * This class represents the "Horse" celestial stem in Chinese astrology.
  * It implements the GetResultByStemBranch and Star interfaces.
@@ -31,23 +29,16 @@ public class Horse implements Star {
         return HORSE;
     }
 
-    @Override
-    public List<String> lookupList(String input) {
-        return null;
-    }
-
+    /**
+     * Returns the map that associates each stem with a branch that makes up a Horse combination.
+     */
     @Override
     public ImmutableMap<String, String> getMap() {
         return null;
     }
 
-    @Override
-    public <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper) {
-        V value = mapper.get(input);
-        return value != null ? value.toString() : null;    }
-
     /**
-     * This method overrides the checkStemBranch() method from the GetResultByStemBranch interface.
+     * This method overrides the checkStemBranch() method from the Star interface.
      * It checks the given stem and branch and returns the corresponding Jiazi table.
      *
      * @param stem The stem to be checked as a String.

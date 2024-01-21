@@ -4,7 +4,6 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
-import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
 
 import java.util.List;
 
@@ -54,11 +53,13 @@ public class RichMan implements Star {
     /**
      * Returns a list of branches that make up a Rich Man combination for a given stem.
      */
-    @Override
     public List<String> lookupList(String input) {
         return ImmutableList.copyOf(LIST.get(input));
     }
 
+    /**
+     * Returns the map that associates each stem with a branch that makes up a RichMan combination.
+     */
     @Override
     public ImmutableMap<String, String> getMap() {
         return null;
@@ -66,11 +67,6 @@ public class RichMan implements Star {
 
     @Override
     public <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper) {
-        return null;
-    }
-
-    @Override
-    public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) {
         return null;
     }
 }

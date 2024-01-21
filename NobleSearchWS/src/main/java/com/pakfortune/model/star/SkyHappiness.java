@@ -1,9 +1,6 @@
 package com.pakfortune.model.star;
 
 import com.google.common.collect.ImmutableMap;
-import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
-
-import java.util.List;
 
 /*
   天喜
@@ -48,21 +45,6 @@ public class SkyHappiness implements Star {
     @Override
     public String getName() {
         return SKY_HAPPINESS;
-    }
-
-    @Override
-    public List<String> lookupList(String input) {
-        return null;
-    }
-
-    @Override
-    public <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper) {
-        V value = mapper.get(input);
-        return value != null ? value.toString() : null;    }
-
-    @Override
-    public SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch) {
-        return null;
     }
 }
 

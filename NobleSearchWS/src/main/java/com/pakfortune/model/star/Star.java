@@ -3,8 +3,6 @@ package com.pakfortune.model.star;
 import com.google.common.collect.ImmutableMap;
 import com.pakfortune.model.element.SIXTY_JIAZI_TABLE;
 
-import java.util.List;
-
 /**
  * Represents an interface for a star object.
  */
@@ -16,14 +14,6 @@ public interface Star {
      * @return The name of the star.
      */
     String getName();
-
-    /**
-     * Performs a lookup operation based on the input and returns a list of strings.
-     *
-     * @param input The input for the lookup.
-     * @return A list of strings resulting from the lookup operation.
-     */
-    List<String> lookupList(String input);
 
     /**
      * Gets an immutable map of string key-value pairs.
@@ -41,7 +31,11 @@ public interface Star {
      * @param mapper The immutable map used for the lookup operation.
      * @return The result of the lookup operation as a string.
      */
-    <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper);
+    default <K, V> String lookupMap(K input, ImmutableMap<K, V> mapper)
+    {
+        V value = mapper.get(input);
+        return value != null ? value.toString() : null;
+    }
 
     /**
      * Checks the stem and branch of the star using a specific table.
@@ -50,7 +44,10 @@ public interface Star {
      * @param branch The branch of the star.
      * @return A result based on the stem and branch check using the specified table.
      */
-    SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch);
+    default SIXTY_JIAZI_TABLE checkStemBranch(String stem, String branch)
+    {
+        return null;
+    }
 }
 
 
