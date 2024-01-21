@@ -35,6 +35,7 @@ public class SkyHappiness implements Star {
     /**
      * Returns the map that associates each stem with a branch that makes up a Sky Happiness combination.
      */
+    @Override
     public ImmutableMap<String, String> getMap() {
         return MAP;
     }
